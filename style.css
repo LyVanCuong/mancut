@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #ffe6f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+/* nền tim bay */
+.hearts-bg span {
+  position: absolute;
+  bottom: -20px;
+  color: red;
+  font-size: 14px;
+  animation: floatUp linear forwards;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* chữ hồng mở đầu */
+.glow-text {
+  font-size: 7vw; /* co theo chiều ngang */
+  color: hotpink;
+  text-shadow: 0 0 10px pink, 0 0 20px deeppink;
+  animation: fadeInOut 4s ease-in-out forwards;
+  position: absolute;
+  top: 15%;
+  text-align: center;
+  z-index: 2;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  30% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* runner + trái tim */
+.runner-wrapper {
+  position: absolute;
+  bottom: 15%;
+  left: -25vw;
+  animation: runToTarget 5s ease-in-out forwards;
+  animation-delay: 4s; /* chờ chữ mở đầu xong */
+  display: inline-block;
+  z-index: 2;
+}
+
+.runner {
+  width: 20vw; /* co giãn theo khung */
+  max-width: 120px;
+}
+
+.runner-heart {
+  position: absolute;
+  top: -8vw; 
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 8vw;
+  color: deeppink;
+  text-shadow: 0 0 8px white, 0 0 16px hotpink;
+}
+
+/* target */
+.target {
+  position: absolute;
+  bottom: 15%;
+  right: 8%;
+  width: 25vw;
+  max-width: 150px;
+  z-index: 2;
+}
+
+/* animation chạy */
+@keyframes runToTarget {
+  to { left: 60%; }
+}
+
+/* chữ hiển thị khi chạm target */
+.love-text {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 6vw;
+  font-weight: bold;
+  color: deeppink;
+  text-shadow: 0 0 10px white, 0 0 20px hotpink;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 3;
+}
