@@ -85,7 +85,7 @@ body {
   right: 8%;
   width: 25vw;
   max-width: 150px;
-  z-index: 2;
+  z-index: 1;
 }
 
 /* animation chạy */
